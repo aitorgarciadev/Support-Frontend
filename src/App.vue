@@ -1,26 +1,29 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
   <RouterView />
 </template>
 
 <style scoped>
+/* Aplica el gradiente al body */
+body {
+  background: linear-gradient(
+    to right,
+    #baffc5,
+    #5eb5ad
+  ) !important; /* Gradiente de fondo */
+  margin: 0; /* Elimina el margen por defecto del body */
+  font-family: Arial, sans-serif; /* Cambia la fuente según tus necesidades */
+}
+
+#app {
+  min-height: 100vh; /* Asegura que el contenido del app llene toda la altura de la ventana */
+  display: flex;
+  flex-direction: column;
+}
+
 header {
   line-height: 1.5;
   max-height: 100vh;
