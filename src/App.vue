@@ -8,15 +8,6 @@ import { RouterLink, RouterView } from "vue-router";
 
 <style scoped>
 /* Aplica el gradiente al body */
-body {
-  background: linear-gradient(
-    to right,
-    #baffc5,
-    #5eb5ad
-  ) !important; /* Gradiente de fondo */
-  margin: 0; /* Elimina el margen por defecto del body */
-  font-family: Arial, sans-serif; /* Cambia la fuente según tus necesidades */
-}
 
 #app {
   min-height: 100vh; /* Asegura que el contenido del app llene toda la altura de la ventana */

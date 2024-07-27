@@ -3,15 +3,15 @@ export default {
   name: "LoginCard",
   data() {
     return {
-      email: "",
+      user: "",
       password: "",
     };
   },
   methods: {
     handleSubmit() {
       // Lógica para manejar el inicio de sesión
-      console.log("Correo:", this.email);
-      console.log("Contraseña:", this.password);
+      console.log("user:", this.user);
+      console.log("password:", this.password);
       // Aquí puedes agregar la lógica para enviar los datos al servidor
     },
   },
@@ -19,7 +19,7 @@ export default {
 </script>
 
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid loginViewBody">
     <div class="row col-12">
       <div class="col-12 mt-5">
         <h2 class="text-center strokedText1">WELCOME TO YOUR SUPPORT APP</h2>
@@ -42,12 +42,12 @@ export default {
           <form @submit.prevent="handleSubmit">
             <div class="mt-5">
               <input
-                type="email"
+                type="user"
                 class="form-control"
-                id="email"
-                v-model="email"
+                id="user"
+                v-model="user"
                 required
-                placeholder="Email"
+                placeholder="User"
               />
             </div>
             <div class="mb-5 mt-5 pt-3">
@@ -73,12 +73,6 @@ export default {
 </template>
 
 <style scoped>
-.container-fluid {
-  background: linear-gradient(to right, #5eb5ad, #85dbbb) !important;
-  height: 100vh !important;
-  width: 100vw !important;
-}
-
 .strokedText1 {
   font-size: 4vw;
   color: white; /* Color del texto */

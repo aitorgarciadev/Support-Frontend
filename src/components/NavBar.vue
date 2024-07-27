@@ -18,10 +18,6 @@
   align-items: center; /* Centra los elementos verticalmente */
 }
 
-.navbar-brand {
-  /* Asegúrate de que esta clase no tenga estilos que puedan sobrescribir .gradient-text */
-}
-
 .gradient-text {
   position: relative; /* Necesario para posicionar el pseudo-elemento */
   font-size: 4vw; /* Tamaño del texto basado en el ancho del viewport */

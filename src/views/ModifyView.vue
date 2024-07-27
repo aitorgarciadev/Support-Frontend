@@ -1,15 +1,14 @@
-<!-- HomeView.vue -->
 <template>
   <div>
     <Navbar></Navbar>
-    <LoginForm></LoginForm>
+    <ModifyForm></ModifyForm>
     <Footer></Footer>
   </div>
 </template>
 
 <script setup>
-import LoginForm from "@/components/LoginForm.vue";
 import Navbar from "@/components/NavBar.vue"; // Asegúrate de que la ruta sea correcta
+import ModifyForm from "@/components/ModifyForm.vue";
 import Footer from "@/components/Footer.vue";
 </script>
 
