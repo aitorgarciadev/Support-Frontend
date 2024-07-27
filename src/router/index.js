@@ -1,41 +1,45 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+
+const HomeView = () => import("../views/HomeView.vue");
+const SupportView = () => import("../views/SupportView.vue");
+const ModifyView = () => import("../views/ModifyView.vue");
+const RequestsView = () => import("../views/RequestsView.vue");
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/",
-      name: "home",
+      name: "Home",
       component: HomeView,
-    },
-    {
-      path: "/support",
-      name: "support",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import("../views/SupportView.vue"),
+      meta: { title: "SupportApp" },
     },
 
     {
-      path: "/requests",
-      name: "requests",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import("../views/RequestsView.vue"),
+      path: "/new-request",
+      name: "NewRequest",
+      component: SupportView,
+      meta: { title: "New Request" },
     },
-
     {
-      path: "/modify",
-      name: "modify",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import("../views/ModifyView.vue"),
+      path: "/edit-request/:id",
+      name: "EditRequest",
+      component: ModifyView,
+      props: true,
+      meta: { title: "Edit Request" },
+    },
+    {
+      path: "/request-list",
+      name: "RequestList",
+      component: RequestsView,
+      meta: { title: "Request List" },
     },
   ],
+});
+
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title || "SupportApp";
+  next();
 });
 
 export default router;
